@@ -1,6 +1,6 @@
 # Designing Around Uniqueness Constraints in Domain-Driven Design
 
-As a principal software developer, I often work with teams trying to build expressive domain models using Domain-Driven Design (DDD). One common challenge in real-world systems is handling rules that require **global knowledge** — like enforcing the uniqueness of a user’s email or username.
+As DDD practioner, I often work with teams trying to build expressive domain models using Domain-Driven Design (DDD). One common challenge in real-world systems is handling rules that require **global knowledge** — like enforcing the uniqueness of a user’s email or username.
 
 When modeling such rules, we usually want three things:
 - **A complete domain model**: all business logic lives in the domain layer.
@@ -103,25 +103,21 @@ public class UserService
         if (_userRepository.ExistsByUsername(username))
             return Result.Failed("Username is already taken");
 
-        if (IsBanned(username))
-            return Result.Failed("Username contains a banned word");
-
         var user = new User();
-        user.SetUsername(username);
+        var result = user.SetUsername(username);
+
+        if (!result.Succeeded())
+        {
+            return Result.Failed(result.Message);
+        }
 
         _userRepository.Save(user);
         return Result.Succeeded();
     }
-
-    private bool IsBanned(string username)
-    {
-        return new[] { "admin", "root", "system" }
-            .Any(b => username.Contains(b, StringComparison.OrdinalIgnoreCase));
-    }
 }
 ```
 
-And the entity becomes a pure object:
+And the entity becomes more pure:
 
 ```csharp
 public class User : Entity
@@ -131,6 +127,12 @@ public class User : Entity
     public void SetUsername(string username)
     {
         Username = username;
+    }
+
+    private bool IsBanned(string username)
+    {
+        return new[] { "admin", "root", "system" }
+            .Any(b => username.Contains(b, StringComparison.OrdinalIgnoreCase));
     }
 }
 ```
