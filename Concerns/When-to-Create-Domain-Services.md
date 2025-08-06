@@ -243,6 +243,4 @@ public class LoanApprovalService
 > — *Eric Evans*
 
 ---
-**Behrang Mohseni**
-behrangmohseni@live.com
-Auguest, 2025
+**Behrang Mohseni** | Auguest, 2025 | behrangmohseni@live.com

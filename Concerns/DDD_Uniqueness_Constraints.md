@@ -170,6 +170,4 @@ When you find yourself passing too much data into an entity just to validate som
 Keep your domain clean, your boundaries intentional, and your architecture practical.
 
 ---
-**Behrang Mohseni**
-behrangmohseni@live.com
-Auguest, 2025
+**Behrang Mohseni** | Auguest, 2025 | behrangmohseni@live.com
