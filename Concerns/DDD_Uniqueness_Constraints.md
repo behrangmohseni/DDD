@@ -168,3 +168,8 @@ Domain-Driven Design encourages us to model business rules clearly and close to 
 When you find yourself passing too much data into an entity just to validate something, it’s a sign that **some logic belongs elsewhere**.
 
 Keep your domain clean, your boundaries intentional, and your architecture practical.
+
+---
+**Behrang Mohseni**
+behrangmohseni@live.com
+Auguest, 2025
