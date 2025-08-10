@@ -7,5 +7,5 @@
 ---
 
 ##### Last Reviewed
-- Date: ==YYY/MM/DD==
-- Reviewed by: ==Behrang==
+- Date: `YYY/MM/DD`
+- Reviewed by: `Behrang Mohseni`
