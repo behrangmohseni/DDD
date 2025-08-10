@@ -28,3 +28,7 @@ It ensures everyone (tech, business, product, ops) speaks the same language and 
 1. Review and validate definitions with domain experts.
 2. Add new terms as they emerge in further workshops.
 3. Keep this document **living** — update it when the meaning of a term changes.
+
+##### Last Reviewed
+- Date: ==YYY/MM/DD==
+- Reviewed by: ==Behrang==
